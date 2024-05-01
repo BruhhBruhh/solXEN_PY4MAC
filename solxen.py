@@ -47,7 +47,7 @@ def download_and_prepare_rust_source():
     keypair_path = os.path.expanduser('~/.config/solana/id.json')  # Generic way to get home directory
     response = requests.get(url)
     rust_code = response.text
-    modified_rust_code = rust_code.replace('/Users/DONB/.config/solana/id.json', keypair_path)
+    modified_rust_code = rust_code.replace('/home/ubuntu/.config/solana/id.json', keypair_path)
     with open('src/main.rs', 'w') as f:  # Ensure this is the correct path within your Rust project
         f.write(modified_rust_code)
 
